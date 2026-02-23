@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMMD Internal Uniform Store</title>
+    <style>
+        body { font-family: Arial; background:#f4f4f4; margin:0; padding:0; }
+        header { background:white; padding:20px; text-align:center; font-size:24px; font-weight:bold; }
+        .container { max-width:900px; margin:40px auto; background:white; padding:30px; border-radius:8px; }
+        .product { border-bottom:1px solid #ddd; padding:15px 0; }
+        button { padding:10px 15px; background:#000; color:white; border:none; cursor:pointer; }
+        input { padding:10px; margin:5px 0; width:100%; }
+        .hidden { display:none; }
+    </style>
+</head>
+<body>
+
+<header>CMMD Staff Uniform Store</header>
+
+<div class="container" id="loginSection">
+    <h2>Staff Login</h2>
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="login()">Login</button>
+</div>
+
+<div class="container hidden" id="storeSection">
+    <h2>Available Items</h2>
+
+    <div class="product">
+        <strong>Embroidered Polo</strong> - $38<br>
+        <button onclick="order('Embroidered Polo')">Order</button>
+    </div>
+
+    <div class="product">
+        <strong>Zip-Up Jacket</strong> - $62<br>
+        <button onclick="order('Zip-Up Jacket')">Order</button>
+    </div>
+
+    <div class="product">
+        <strong>Scrub Top</strong> - $29<br>
+        <button onclick="order('Scrub Top')">Order</button>
+    </div>
+
+    <p><strong>Payment:</strong> Send via Venmo or Cash App and include your name.</p>
+</div>
+
+<script>
+function login() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if(email && password) {
+        document.getElementById("loginSection").classList.add("hidden");
+        document.getElementById("storeSection").classList.remove("hidden");
+    } else {
+        alert("Please enter email and password.");
+    }
+}
+
+function order(item) {
+    alert("Order submitted for " + item + ". Please send payment via Venmo or Cash App.");
+}
+</script>
+
+</body>
+</html>
